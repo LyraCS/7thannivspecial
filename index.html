@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7th Anniversary</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Great Vibes', cursive;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative; /* Ensure the footer is positioned relative to the body */
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #section1 {
+            background-image: url('pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #section1 h1 {
+            font-size: 4em;
+        }
+
+        #section1 h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        #section1 h1 a:hover {
+            text-decoration: none;
+        }
+
+        #section2 {
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #section2 .text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        #section2 h2 {
+            font-size: 3em;
+        }
+
+        #section2 p {
+            font-size: 1.2em;
+        }
+
+        #section2 img {
+            max-width: 100%;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+
+        #section2 .text.visible,
+        #section2 img.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #section3 {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #section3 h2 {
+            font-size: 3em;
+        }
+
+        #section3 p {
+            font-size: 1.8em;
+            line-height: 1.5;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 50px 30px;
+            font-size: 1.5em;
+            color: white;
+            background: linear-gradient(to right, #00000000, #00000000);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #00000000, #0000cc00);
+            transform: scale(1.05);
+        }
+
+        .next-section-link {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            background: transparent;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .next-section-link:hover {
+            background: linear-gradient(to right, #00000000, #0000cc00);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+            color: white;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-out;
+        }
+
+        footer.visible {
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            #section3 h2 {
+                font-size: 2.5em;
+            }
+
+            #section3 p {
+                font-size: 1.2em;
+                padding: 0 10px;
+            }
+
+            .button {
+                padding: 12px 24px;
+                font-size: 1em;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #section3 h2 {
+                font-size: 2em;
+            }
+
+            #section3 p {
+                font-size: 1em;
+                padding: 0 5px;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+                margin-top: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <script>
+        // Check if the user is logged in
+        if (!sessionStorage.getItem('loggedIn')) {
+            // If not, redirect to the login page
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <!-- Section 1: Happy 7th Anniversary -->
+    <section id="section1">
+        <div class="content">
+            <h1>
+                Happy 7th
+                <a href="https://open.spotify.com/playlist/3HXgNnBwucpAnLEOlBvtdb?si=463d89a9b4044aa9&pt=6806ecfd711c02d9393e106c6982b53a" target="_blank">
+                    Anniversary!
+                </a>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Section 2: Photo Gallery in Newsletter Format -->
+    <section id="section2">
+        <div class="text">
+            <h2>Our Beautiful Memories</h2>
+        </div>
+        <div class="gallery">
+            <!-- Images for the grid layout -->
+            <img src="pic8.jpg" alt="Photo 1" width="150" height="auto" />
+            <img src="pic3.jpg" alt="Photo 2" width="150" height="auto" />
+            <img src="pic4.jpg" alt="Photo 3" width="150" height="auto" />
+            <img src="pic9.jpg" alt="Photo 4" width="150" height="auto" />
+            <br>
+            <img src="pic7.jpg" alt="Photo 5" width="150" height="auto" />
+            <img src="pic6.jpeg" alt="Photo 6" width="150" height="auto" />
+            <img src="pic2.jpeg" alt="Photo 7" width="150" height="auto" />
+            <img src="pic5.jpg" alt="Photo 8" width="150" height="auto" />
+        </div>
+        <a href="gallery.html" class="next-section-link">Click for a surprise</a>
+    </section>
+
+    <!-- Section 3: Special Words -->
+    <section id="section3">
+        <div class="content">
+            <h2>Special Letter For You</h2><br>
+            <p>Hi!<br><br>Happy Anniversary my love!!! Time flies by so fast, isn't it? Feels like yesterday when we started dating, but look at us now, we've grown so much from our past selves,<br> 
+            I mean look at you? You've accomplished so many things since we've met. I'm really proud of you, love, I'm so grateful for your presence<br>
+            and everything that has happened these past 7 years of us being together. I am really happy that I met you and I will always be forever grateful.<br>
+            There's no day that I've never thought of you, I always miss you every day. I hope that everything we've been through is worth it in the end :)<br><br>
+            I believe that is all from me. Happy Anniversary my love, may our love keep flaming like the eternal glow of the sun whose light gives life to all.<br>
+            I really wanted to be with you so bad right now, I miss hugging you. I hope that you'll have a pleasant day today, and remember, I will always be here for you.<br>
+            I hope to see you soon, and see that beautiful smile through my eyes and not my screen.<br>
+            And again, Happy 7th Anniversary my loveeee, I love you so much, and it will never change.<br><br><br>
+            Yours, Gemi</p>
+            <br><br>
+            <a href="quotation.html" class="button">Click me!!!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        Made with ♥ by Lyra
+    </footer>
+
+    <audio id="bgMusic" src="dwas.mp3" autoplay loop></audio>
+
+    <script>
+        window.addEventListener('load', function () {
+            const sections = document.querySelectorAll('section');
+            const images = document.querySelectorAll('#section2 img');
+            const textElements = document.querySelectorAll('#section2 .text');
+            const footer = document.querySelector('footer');
+            const bgMusic = document.getElementById('bgMusic');
+
+            bgMusic.volume = 0.3; // Set the volume level
+
+            let currentSection = 0;
+
+            function showSection(index) {
+                if (index < sections.length) {
+                    sections[index].classList.add('visible');
+                }
+            }
+
+            function revealContent() {
+                const revealThreshold = window.innerHeight * 0.8;
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= revealThreshold) {
+                        section.classList.add('visible');
+                    }
+                });
+                images.forEach(img => {
+                    const rect = img.getBoundingClientRect();
+                    if (rect.top <= revealThreshold) {
+                        img.classList.add('visible');
+                    }
+                });
+                textElements.forEach(text => {
+                    const rect = text.getBoundingClientRect();
+                    if (rect.top <= revealThreshold) {
+                        text.classList.add('visible');
+                    }
+                });
+
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    footer.classList.add('visible');
+                } else {
+                    footer.classList.remove('visible');
+                }
+            }
+
+            window.addEventListener('scroll', revealContent);
+            window.addEventListener('resize', revealContent); 
+
+            showSection(currentSection);
+            revealContent();
+        });
+    </script>
+</body>
+
+</html>

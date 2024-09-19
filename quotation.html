@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <style>
+
+    body {
+        font-family: 'Bookman Old Style', serif;
+        color: #fff;
+        background: url('penelope1.png') no-repeat;
+        background-size: cover;
+        background-position: 10% 10%; /* Adjust this to fine-tune */
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* Header Styles */
+    header {
+        background: #111;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+
+    /* Container Styles */
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /* Quote Styles */
+    .quote {
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 2px solid #ff0000;
+        border-right: 2px solid #ff0000;
+        border-top: 2px solid #ff0000;
+        border-bottom: 2px solid #ff0000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        font-size: 1.2em;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeInUp 1s forwards; /* Apply fadeInUp animation */
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    /* Quote Hover Effect */
+    .quote:hover {
+        background: rgba(255, 255, 255, 0.2); /* Slight change to background on hover */
+        border-color: #ff0000; /* Keep border color same */
+    }
+
+    /* Keyframes for Animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Button Styles */
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .button:hover {
+        color: #ff0000; /* Change this to any color you want for hover effect */
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+        transition: opacity 0.5s ease;
+    }
+
+    .modal-content {
+        background-color: #000000;
+        font-size: 25px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the modal */
+        animation: fadeIn 0.5s;
+    }
+
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+        
+
+    </style>
+
+    </head>
+
+    <body>
+
+    <header>
+        <h1>Words from my fav book</h1>
+    </header>
+
+    <div class="container">
+        <div class="quote">
+            “So he spoke, and in the same breath he longed to see his dear lover, and return to his home once more.” (Odyssey, Book 9)
+        </div>
+
+        <div class="quote">
+            “But she, though in her heart she was sorely grieved, remained true to him, and kept her faith unbroken.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “There is no place like home; the heart aches for its familiar comforts.” (Odyssey, Book 9)
+        </div>
+
+        <div class="quote">
+            “Even in her sorrow, she kept faith with her absent lover.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “I would choose to live out my days with my dear lover, even if it means living a mortal life.” (Odyssey, Book 5)
+        </div>
+
+        <div class="quote">
+            “She wept for him, longing for the sound of his voice and the sight of his face.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “Hope is the last thing to leave a person, and I still cling to it, despite all the sorrow.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “The heart yearns most for what is distant and beloved.” (Odyssey, Book 9)
+        </div>
+
+        <div class="quote">
+            “The tears that I shed are for the one I love, whose return seems ever more distant.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “Though the future is uncertain, my love for Odysseus remains unwavering.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “I believed in his words and waited for his return with a faith that never wavered.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “No matter the trials I face, my thoughts are ever on my beloved Penelope.” (Odyssey, Book 9)
+        </div>
+
+        <div class="quote">
+            “Though I am alone, my love for Odysseus sustains me through each day.” (Odyssey, Book 19)
+        </div>
+
+        <div class="quote">
+            “At the thought of my lover’s return, my heart swells with hope and joy.” (Odyssey, Book 23)
+        </div>
+        <div class="quote">
+            <a href="hey.html" class="button"><i>"Hey There!"</i></a>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="index.html" class="button">Back to Home</a>
+    </div>
+    
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            const modalText = document.getElementById('modal-text');
+            const closeButton = document.querySelector('.close-button');
+
+            document.querySelectorAll('.quote').forEach(quote => {
+                quote.addEventListener('click', function() {
+                    modalText.textContent = this.textContent;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeButton.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+

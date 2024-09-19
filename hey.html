@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Letter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Changed from height to min-height */
+            overflow-y: auto; /* Allow vertical scrolling */
+        }
+
+        .letter-container {
+            max-width: 90%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-out, slideIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out, moveUp 2.5s ease-out;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 30px 30px;
+            font-size: 1em;
+            color: white;
+            text-decoration: none;
+            background-color: #ff6e6100;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 3s ease-out;
+        }
+
+        a.button:hover {
+            background-color: #ff8a7500;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes moveUp {
+            from {
+                transform: translateY(50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .song-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+        }
+
+        .song-info i {
+            margin-right: 5px;
+            font-style: normal;
+        }
+
+        .song-info i::before {
+            content: "♪ -";
+            margin-right: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="letter-container">
+        <h1>Hi</h1>
+        <p>Yang ini ga aneh" dulu. Aku cuman mau ngomong feelingku aja belakangan ini, feelingku selama kamu huru-hara
+            and the reasoning kenapa aku ga buka sgmu di tanggal 12 and 13 itu selain karena kepencet. Jujur aku juga kangen ngobrol,
+            karena selama kamu ribet itu kan emang kamu juga ilang"an mulu bahkan ilang ga ngabarin tau" sudah entah dimana. Terus soal ga buka sgmu, ya keanya kamu tau alesannya kenapa.
+            I don't get it, why?</p>
+        <p>Like c'mon bro you didn't even tell me about it, and for my own sanity I choose not to open it,
+            karena aku sibuk ngerjain ginian yang ada nanti jadi males lanjutin udah seniat ini. Pengen bilang can you change those habits tapi, 
+            kamu juga bilang kalo kamu berusaha buat ngabarin kalo lagi bisa, dan kamu juga tipe orang yang ga buka hp kalo lagi diluar, I get it. But idk all this makes me feel lonely,
+            that's just me tho.</p>
+        <P>I mean bulan ini and belakagan ini emang kamu juga lagi susah waktu sih buat aku so, yea i totally understand that. I just wanna say this aja sih, expressing my feelings towards
+            all of this. I mean after all this time, ternyata aku gabisa biasa sama itu, maaf yah kalo aku selalu brought this up, beneran ga bisa ngebiasain diri aku. Well, goodluck on your new journey to
+            be the LCP of Aiesec UGM sayangg, keep on being the Harum that I know and love yahh!!, anyway enjoy this "Baguette" hehe</p>
+        <p>Your love, <br> Gilang</p>
+
+        <a href="index.html" class="button">Balik</a>
+    </div>
+
+    <audio id="bg-music" src="lv.mp3" preload="auto"></audio>
+
+    <div class="song-info">
+        <i></i>La Vaguelette (Cécilia Cara)
+    </div>
+
+    <script>
+        window.addEventListener('load', function () {
+            const bgMusic = document.getElementById('bg-music');
+            bgMusic.volume = 0.3; // Set volume to 30%
+            bgMusic.play().catch(error => {
+                console.log('Autoplay failed:', error);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+

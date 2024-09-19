@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('login.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            animation: fadeInBackground 1s ease-out;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.7); /* Slightly opaque background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            animation: fadeInContainer 1s ease-out forwards;
+            transform: scale(0.95);
+            opacity: 0;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ffffff;
+            background: #333;
+            color: #fff;
+            font-size: 1em;
+            transition: border 0.3s ease, background 0.3s ease;
+        }
+
+        .login-container input:focus {
+            border: 1px solid #ffffff;
+            background: #444;
+            outline: none;
+        }
+
+        .login-container button {
+            width: calc(100% - 20px);
+            padding: 15px;
+            background: linear-gradient(to right, #ff0000, #0000ff);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: linear-gradient(to right, #cc0000, #0000cc);
+        }
+
+        .clue {
+            color: #ffffff;
+            margin-top: 15px;
+            font-size: 1em;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInBackground {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="loginBtn">Login</button>
+        <p class="clue">On the previous letter.</p>
+        <p class="error-message" id="errorMessage">Harum, 7thanniv</p>
+    </div>
+
+     <script>
+            // Check if user has visited the letter page
+        if (!localStorage.getItem('letterSeen')) {
+            window.location.href = 'letter.html';
+            }
+        
+            // If the user is allowed to stay on the login page, continue with login functionality
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+        
+            if (username === "Harum" && password === "7thanniv") {
+                sessionStorage.setItem('loggedIn', 'true');
+                window.location.href = 'narrative.html';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+        
+            // Check if already logged in
+        if (sessionStorage.getItem('loggedIn')) {
+            window.location.href = 'narrative.html';
+        }
+    </script>
+    
+</body>
+
+</html>

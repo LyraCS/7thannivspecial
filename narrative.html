@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .narrative {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .narrative.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .narrative-text {
+            font-size: 2em;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="narrative" id="narrative">
+        <p class="narrative-text">Hey!</p>
+    </div>
+
+    <script>
+        const narratives = [
+            "Hey!",
+            "I just want you to know that...",
+            "It's been a wonderful year of my life with you.",
+            "I just wanted you to know that I'm grateful for you.",
+            "I love you so much.",
+            "Here's for now and ever."
+        ];
+
+        let currentIndex = 0;
+        const narrativeElement = document.getElementById('narrative');
+        const textElement = document.querySelector('.narrative-text');
+
+        function showNextNarrative() {
+            if (currentIndex < narratives.length) {
+                // Update the text
+                textElement.textContent = narratives[currentIndex];
+                // Add visibility class for fade-in animation
+                narrativeElement.classList.add('visible');
+                currentIndex++;
+            } else {
+                // Redirect to index.html after the last narrative
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Show initial narrative with fade-in effect
+        showNextNarrative();
+
+        // Add click event to advance the narrative
+        document.addEventListener('click', function () {
+            // Remove visibility class to prepare for fade-out animation
+            narrativeElement.classList.remove('visible');
+            setTimeout(() => {
+                showNextNarrative();
+            }, 1000); // Delay to match fade-out animation duration
+        });
+    </script>
+</body>
+
+</html>
